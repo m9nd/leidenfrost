@@ -2,11 +2,11 @@
 
 local privilege escalation on windows by exploiting **CMSTP** to circumvent **User Access Control (UAC)**
 
-## how it works
+# how it works
 
 the leidenfrost attack involves deploying a specially crafted .ini file and utilizing cmstp.exe to install it. this process triggers the execution of a post-installation executable with elevated administrator privileges, thereby bypassing UAC safeguards! real fun stuff!
 
-## changes
+# changes
 
 ### i made the following changes to the deploy::craftPayload function:
     * the szExecutablePath parameter is now passed as a const reference to avoid unnecessary copying.

@@ -60,7 +60,7 @@ the leidenfrost attack involves deploying a specially crafted .ini file and util
 
     * character set definition: the character set is now defined as a const std::string literal directly, whereas in the original code by our lovely xerosic, is defined as a character array (const char charset[]). 
 
-    * random character selection: In the modified code, a std::uniform_int_distribution<size_t> is used to generate random indices within the range of the character set. These indices are used to select random characters from the character set. This approach ensures a uniform distribution of random characters.
+    * random character selection: in the modified code, a std::uniform_int_distribution<size_t> is used to generate random indices within the range of the character set. these indices are used to select random characters from the character set. this approach ensures a uniform distribution of random characters.
 
     * string initialization: instead of initializing the string str with a value of 0 (std::string str(nLength, 0) in the original code), we now initialize it with a space character (std::string str(nLength, ' ')). thus ensuring that the resulting string doesn't contain null characters, which could lead to some unwanted tomfoolery
 

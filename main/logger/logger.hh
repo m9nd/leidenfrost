@@ -1,6 +1,5 @@
 
 #pragma once
-
 #include <iostream>
 
 #define RESET   "\033[0m"
